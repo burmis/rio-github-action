@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag burmis/rio-github-action:$(date +%s)
+    - name: Docker Login
+      uses: actions/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Push image to Docker Hub
+      uses: actions/docker/cli@master
+      with:
+        args: push burmis/rio-github-action
