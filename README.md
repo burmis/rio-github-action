@@ -1,4 +1,6 @@
-# rio-github-action
+# rio-github-action (ALPHA)
+
+**NOTE: This is a new repo. PRs welcome. See issues for what's to be done.**
 
 A GitHub Action you can use to publish application to Kubernetes with Rio from Rancher Labs.
 
