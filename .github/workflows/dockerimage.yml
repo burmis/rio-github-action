@@ -4,8 +4,8 @@ on:
   push:
     branches:
     - masteron:
-    paths:   
-    - '!README.md'
+  paths:   
+  - '!README.md'
 
 jobs:
 
