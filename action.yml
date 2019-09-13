@@ -1,0 +1,15 @@
+name: 'Rio CLI'
+description: 'Use Rancher Rio PAAS CLI to deploy to Kubernetes and manage Rio services. As rio uses kubectl under the hood, you need to configure an authenticated Kubernetes cluster before using this action. See https://github.com/burmis/rio-github-action for details.'
+author: 'Mark Bennett'
+branding:
+  icon: 'cloud'
+  color: 'blue'
+inputs:
+  rio-cli-args:  # id of input
+    description: 'Arguments to pass to the rio CLI. See https://rio.io for details.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.rio-cli-args }}
