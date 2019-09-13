@@ -6,3 +6,5 @@ RUN apk update \
     && chmod u+x kubectl \
     && mv kubectl /bin/kubectl \
     && curl -sfL https://get.rio.io | sh -
+
+ENTRYPOINT [ "/usr/local/bin/rio" ]
