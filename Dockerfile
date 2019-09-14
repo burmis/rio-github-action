@@ -11,4 +11,3 @@ RUN apk update \
 
 WORKDIR /root
 ENTRYPOINT [ "/usr/local/bin/rio" ]
-CMD ["help"]
