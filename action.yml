@@ -4,12 +4,6 @@ author: 'Mark Bennett'
 branding:
   icon: 'cloud'
   color: 'blue'
-inputs:
-  rio-cli-args:  # id of input
-    description: 'Arguments to pass to the rio CLI.'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.rio-cli-args }}
