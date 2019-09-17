@@ -6,13 +6,10 @@ echo "Deploying with Rio..."
 
 env
 
-echo "Contents of Kubernetes config..."
-if [ -f "$KUBECONFIG" ]; then
-    cat $KUBECONFIG
-else
-    echo "NO KUBERNETES CONFIG FILE FOUND IN ENVIRONMENT, PLEASE SPECIFY WITH --kubeconfig argument"
+if [ -f "$RIO_CONFIG" ]; then
+    source $RIO_CONFIG
 fi
 
 echo "Command arguments = $*"
 
-/usr/local/bin/rio $*
+sh -c "/usr/local/bin/rio $*"
